@@ -12,4 +12,6 @@ defmodule TodosWeb.TodoJSON do
       done: todo.done
     }
   end
+
+  def show(%{todo: todo}), do: data(todo)
 end
