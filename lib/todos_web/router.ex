@@ -9,6 +9,7 @@ defmodule TodosWeb.Router do
     pipe_through :api
     get "/todos", TodoController, :index
     get "/todos/:id", TodoController, :show
+    post "/todos", TodoController, :create
   end
 
   # Enable LiveDashboard in development
