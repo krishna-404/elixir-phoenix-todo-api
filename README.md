@@ -1,3 +1,8 @@
+This built following the guidelines at
+[Elixir Api From Scratch](https://intercaetera.com/posts/elixir-api-from-scratch/) 
+
+See the commits history to understand the steps taken to build the app.
+
 # Todos
 
 To start your Phoenix server:
