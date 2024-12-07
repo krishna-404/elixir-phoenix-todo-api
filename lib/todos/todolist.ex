@@ -1,3 +1,6 @@
 defmodule Todos.TodoList do
-  # Context Will go here.
+  alias Todos.Repo
+  alias Todos.TodoList.Todo
+
+  def list_todos, do: Repo.all(Todo)
 end
