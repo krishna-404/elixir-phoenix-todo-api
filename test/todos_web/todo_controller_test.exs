@@ -34,4 +34,23 @@ defmodule TodosWeb.TodoControllerTest do
     end
   end
 
+  describe "create todo" do
+    test "responds with a todo when data is valid", %{conn: conn} do
+      # given
+      attrs = %{title: "Walk the dog", done: false}
+
+      # when
+      conn = post(conn, ~p"/api/todos", todo: attrs)
+
+      # then
+      assert %{"id" => id} = json_response(conn, 201)
+      conn = get(conn, ~p"/api/todos/#{id}")
+      assert %{
+        "id" => ^id,
+        "title" => "Walk the dog",
+        "done" => false
+      } = json_response(conn, 200)
+    end
+  end
+
 end

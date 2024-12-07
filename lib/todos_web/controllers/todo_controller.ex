@@ -12,7 +12,7 @@ defmodule TodosWeb.TodoController do
 
   def create(conn, %{"todo" => todo_params}) do
     with {:ok, todo} <- TodoList.create_todo(todo_params) do
-      conn |> put_status(:created) |> put_resp_header("Location", ~p"/api/todos/#{todo.id}") |> json(todo)
+      conn |> put_status(:created) |> put_resp_header("location", ~p"/api/todos/#{todo.id}") |> json(todo)
     end
 
   end
